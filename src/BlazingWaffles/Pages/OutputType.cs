@@ -1,8 +1,5 @@
-﻿public partial class IndexModel
+﻿public enum OutputType
 {
-    public enum OutputType
-    {
-        Text,
-        Html
-    }
+    Text,
+    Html
 }

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Blazor.Components;
 using System.Threading.Tasks;
 using WaffleGenerator;
 
-public partial class IndexModel : BlazorComponent
+public class IndexModel : BlazorComponent
 {
     int paragraphs;
 
@@ -32,7 +32,7 @@ public partial class IndexModel : BlazorComponent
         }
     }
 
-    public OutputType Type
+    public OutputType OutputType
     {
         get => outputType;
         set
