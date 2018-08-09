@@ -54,7 +54,7 @@ public class IndexModel : BlazorComponent
         }
         else
         {
-            Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading);
+            Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
         }
     }
 }
