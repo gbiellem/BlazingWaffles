@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Blazor.Components;
-using System.Threading.Tasks;
 using WaffleGenerator;
 
 public class IndexModel : BlazorComponent
@@ -47,7 +46,7 @@ public class IndexModel : BlazorComponent
         Paragraphs = 1;
     }
 
-    public Task Generate()
+    public void Generate()
     {
         if (outputType == OutputType.Text)
         {
@@ -57,7 +56,5 @@ public class IndexModel : BlazorComponent
         {
             Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading);
         }
-
-        return Task.CompletedTask;
     }
 }
