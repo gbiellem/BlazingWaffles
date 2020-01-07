@@ -1,60 +1,59 @@
-using Microsoft.AspNetCore.Blazor.Components;
+using Microsoft.AspNetCore.Components;
 using WaffleGenerator;
 
-public class IndexModel : BlazorComponent
+namespace BlazingWaffles
 {
-    int paragraphs;
-
-    bool includeHeading;
-
-    OutputType outputType;
-
-    public string Waffle;
-
-    public int Paragraphs
+    public partial class IndexModel :
+        ComponentBase
     {
-        get => paragraphs;
-        set
+        int paragraphs = 1;
+
+        bool includeHeading;
+
+        OutputType outputType;
+
+        public string Waffle = WaffleEngine.Text(1, false);
+
+        public int Paragraphs
         {
-            paragraphs = value;
-            Generate();
+            get => paragraphs;
+            set
+            {
+                paragraphs = value;
+                Generate();
+            }
         }
-    }
 
-    public bool IncludeHeading
-    {
-        get => includeHeading;
-        set
+        public bool IncludeHeading
         {
-            includeHeading = value;
-            Generate();
+            get => includeHeading;
+            set
+            {
+                includeHeading = value;
+                Generate();
+            }
         }
-    }
 
-    public OutputType OutputType
-    {
-        get => outputType;
-        set
+        public OutputType OutputType
         {
-            outputType = value;
-            Generate();
+            get => outputType;
+            set
+            {
+                outputType = value;
+                Generate();
+            }
         }
-    }
 
-    protected override void OnInit()
-    {
-        Paragraphs = 1;
-    }
-
-    public void Generate()
-    {
-        if (outputType == OutputType.Text)
+        public void Generate()
         {
-            Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
-        }
-        else
-        {
-            Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
+            if (outputType == OutputType.Text)
+            {
+                Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
+            }
+            else
+            {
+                Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
+            }
         }
     }
 }
