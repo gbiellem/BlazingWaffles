@@ -1,16 +1,14 @@
-﻿using Microsoft.AspNetCore.Blazor.Hosting;
+﻿using System.Threading.Tasks;
+using BlazingWaffles;
+using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace BlazingWaffles
+public class Program
 {
-    public class Program
+    public static Task Main()
     {
-        public static void Main()
-        {
-            CreateHostBuilder().Build().Run();
-        }
+        var builder = WebAssemblyHostBuilder.CreateDefault();
+        builder.RootComponents.Add<App>("app");
 
-        public static IWebAssemblyHostBuilder CreateHostBuilder() =>
-            BlazorWebAssemblyHost.CreateDefaultBuilder()
-                .UseBlazorStartup<Startup>();
+        return builder.Build().RunAsync();
     }
 }
