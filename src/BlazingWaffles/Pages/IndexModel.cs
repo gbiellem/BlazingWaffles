@@ -1,59 +1,28 @@
 using Microsoft.AspNetCore.Components;
+using PropertyChanged;
 using WaffleGenerator;
 
 namespace BlazingWaffles
 {
+    [AddINotifyPropertyChangedInterface]
     public partial class IndexModel :
         ComponentBase
     {
-        int paragraphs = 1;
-
-        bool includeHeading;
-
-        OutputType outputType;
-
-        public string Waffle = WaffleEngine.Text(1, false);
-
-        public int Paragraphs
+        public string Waffle
         {
-            get => paragraphs;
-            set
+            get
             {
-                paragraphs = value;
-                Generate();
+                if (OutputType == OutputType.Text)
+                {
+                    return WaffleEngine.Text(Paragraphs, IncludeHeading);
+                }
+
+                return WaffleEngine.Html(Paragraphs, IncludeHeading, false);
             }
         }
 
-        public bool IncludeHeading
-        {
-            get => includeHeading;
-            set
-            {
-                includeHeading = value;
-                Generate();
-            }
-        }
-
-        public OutputType OutputType
-        {
-            get => outputType;
-            set
-            {
-                outputType = value;
-                Generate();
-            }
-        }
-
-        public void Generate()
-        {
-            if (outputType == OutputType.Text)
-            {
-                Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
-            }
-            else
-            {
-                Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
-            }
-        }
+        public int Paragraphs { get; set; } = 1;
+        public bool IncludeHeading { get; set; }
+        public OutputType OutputType { get; set; }
     }
 }
