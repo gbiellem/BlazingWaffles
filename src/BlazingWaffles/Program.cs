@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using BlazingWaffles;
-using Microsoft.AspNetCore.Blazor.Hosting;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 public class Program
 {
