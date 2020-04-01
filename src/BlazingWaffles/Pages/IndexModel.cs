@@ -1,5 +1,4 @@
-using System.Linq;
-using System.Reflection;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Components;
 using PropertyChanged;
 using WaffleGenerator;
@@ -12,26 +11,44 @@ namespace BlazingWaffles
     {
         public IndexModel()
         {
-            var informationalVersion = GetType().Assembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().Single().InformationalVersion;
-            Sha = informationalVersion.Substring(informationalVersion.IndexOf('+') + 1);
+            Sha = ShaLoader.Load();
+
         }
 
-        public string Waffle
+        public string Waffle { get; set; }
+
+        void SetWaffle()
         {
-            get
+            if (OutputType == OutputType.Text)
             {
-                if (OutputType == OutputType.Text)
-                {
-                    return WaffleEngine.Text(Paragraphs, IncludeHeading);
-                }
-
-                return WaffleEngine.Html(Paragraphs, IncludeHeading, false);
+                Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
+                return;
             }
+
+            Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
         }
+
 
         public string Sha { get; }
         public int Paragraphs { get; set; } = 1;
+
+        public void OnParagraphsChanged()
+        {
+            SetWaffle();
+        }
+
         public bool IncludeHeading { get; set; }
+
+        public void OnIncludeHeadingChanged()
+        {
+            SetWaffle();
+        }
+
         public OutputType OutputType { get; set; }
+
+        public void OnOutputTypeChanged()
+        {
+            SetWaffle();
+        }
     }
 }

@@ -1,0 +1,6 @@
+{
+  Instance: {
+    Waffle: 'The Waffle',
+    Paragraphs: 1
+  }
+}
