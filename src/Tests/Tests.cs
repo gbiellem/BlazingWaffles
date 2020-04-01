@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using BlazingWaffles.Pages;
-using Verify;
 using VerifyBunit;
 using Xunit;
 using Xunit.Abstractions;
@@ -12,10 +11,10 @@ public class Tests :
     public Task Component()
     {
         var component = RenderComponent<Index>();
-        component.Instance.Waffle = "The Waffle";
-        var verifySettings = new VerifySettings();
-        verifySettings.ModifySerialization(_ => { _.IgnoreMember("Sha"); });
-        return Verify(component, verifySettings);
+        var instance = component.Instance;
+        instance.Waffle = "The Waffle";
+        instance.Sha = "TheSha";
+        return Verify(component);
     }
 
     public Tests(ITestOutputHelper output) :

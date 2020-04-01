@@ -12,7 +12,6 @@ namespace BlazingWaffles
         public IndexModel()
         {
             Sha = ShaLoader.Load();
-
         }
 
         public string Waffle { get; set; }
@@ -29,7 +28,7 @@ namespace BlazingWaffles
         }
 
 
-        public string Sha { get; }
+        public string Sha { get; set; }
         public int Paragraphs { get; set; } = 1;
 
         public void OnParagraphsChanged()
