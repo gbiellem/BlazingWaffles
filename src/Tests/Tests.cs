@@ -14,6 +14,7 @@ public class Tests :
         var instance = component.Instance;
         instance.Waffle = "The Waffle";
         instance.Sha = "TheSha";
+        component.Render();
         return Verify(component);
     }
 

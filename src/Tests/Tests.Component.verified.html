@@ -7,7 +7,7 @@
         </p>
         <ul>
             <li>This app source: <a href="https://github.com/gbiellem/BlazingWaffles">https://github.com/gbiellem/BlazingWaffles</a></li>
-            <li>Built from <a href="https://github.com/gbiellem/BlazingWaffles/commit/124d4372c4ea2fc5422888b9dedac30d288059e4">124d4372c4ea2fc5422888b9dedac30d288059e4</a></li>
+            <li>Built from <a href="https://github.com/gbiellem/BlazingWaffles/commit/TheSha">TheSha</a></li>
             <li>Waffle Generator project: <a href="https://github.com/SimonCropp/WaffleGenerator">https://github.com/SimonCropp/WaffleGenerator</a></li>
         </ul>
     </div>
@@ -18,16 +18,16 @@
     <div class="card-body">
         <div class="container.align-items-baseline" style="width: 250px;">
             <div class="form-group form-check">
-                <input class="form-check-input" type="checkbox" id="headerschk" blazor:onchange="1" />
+                <input class="form-check-input" type="checkbox" id="headerschk" blazor:onchange="4" />
                 <label class="form-check-label" for="headerschk">Heading</label>
             </div>
             <div class="form-group">
                 <label for="paragraphs">Generate 1 Paragraph(s)</label>
-                <input class="form-control-range" type="range" min="1" max="10" step="1" id="paragraphs" onclick="Generate" value="1" blazor:onchange="2" />
+                <input class="form-control-range" type="range" min="1" max="10" step="1" id="paragraphs" onclick="Generate" value="1" blazor:onchange="5" />
             </div>
             <div class="form-group">
                 <label for="outputType">OutputType</label>
-                <select class="form-control" id="outputType" value="Text" blazor:onchange="3">
+                <select class="form-control" id="outputType" value="Text" blazor:onchange="6">
                     <option>Text</option>
                     <option>Html</option>
                 </select>
@@ -39,6 +39,6 @@
 <div class="card">
     <h5 class="card-header">Generator Output</h5>
     <div class="card-body border-dark">
-        <code style="color: darkred;white-space: pre-line"></code>
+        <code style="color: darkred;white-space: pre-line">The Waffle</code>
     </div>
 </div>
