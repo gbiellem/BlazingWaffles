@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Components;
 using PropertyChanged;
 using WaffleGenerator;
@@ -26,7 +25,6 @@ namespace BlazingWaffles
 
             Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
         }
-
 
         public string Sha { get; set; }
         public int Paragraphs { get; set; } = 1;
