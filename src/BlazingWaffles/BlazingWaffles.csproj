@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.2.8" PrivateAssets="all" />
+    <PackageReference Include="TextCopy" Version="4.1.0" />
     <PackageReference Include="WaffleGenerator" Version="4.0.2" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
