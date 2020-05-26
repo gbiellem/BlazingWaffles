@@ -1,4 +1,6 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using PropertyChanged;
 using WaffleGenerator;
 
@@ -13,7 +15,10 @@ namespace BlazingWaffles
             Sha = ShaLoader.Load();
         }
 
+        [Inject] public IJSRuntime JSRuntime { get; set; }
         public string Waffle { get; set; }
+
+        public bool IsWaffleEmpty => Waffle == null;
 
         void SetWaffle()
         {
@@ -46,6 +51,11 @@ namespace BlazingWaffles
         public void OnOutputTypeChanged()
         {
             SetWaffle();
+        }
+
+        public async Task CopyTextToClipboard()
+        {
+            await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", Waffle);
         }
     }
 }

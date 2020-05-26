@@ -40,7 +40,10 @@
 </div>
 
 <div class="card">
-    <h5 class="card-header">Generator Output</h5>
+    <h5 class="card-header">
+        Generator Output
+        <button disabled="@IsWaffleEmpty" type="button" class="btn btn-primary btn-sm" @onclick="CopyTextToClipboard">Copy</button>
+    </h5>
     <div class="card-body border-dark">
         <code style="color: darkred;white-space: pre-line">@Waffle</code>
     </div>
