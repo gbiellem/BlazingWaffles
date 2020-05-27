@@ -1,5 +1,6 @@
 {
   Instance: {
+    Clipboard: {},
     Waffle: 'The Waffle',
     Sha: 'TheSha',
     Paragraphs: 1

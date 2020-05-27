@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using BlazingWaffles.Pages;
+using Bunit.Mocking.JSInterop;
+using TextCopy;
 using VerifyBunit;
 using Xunit;
 using Xunit.Abstractions;
@@ -10,6 +13,8 @@ public class Tests :
     [Fact]
     public Task Component()
     {
+        Services.AddMockJsRuntime();
+        Services.InjectMockClipboard();
         var component = RenderComponent<Index>();
         var instance = component.Instance;
         instance.Waffle = "The Waffle";
