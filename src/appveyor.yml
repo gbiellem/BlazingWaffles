@@ -11,8 +11,14 @@ build_script:
       
     mkdir package
     
-    Compress-Archive -Path C:\projects\blazingwaffles\src\BlazingWaffles\bin\Release\netstandard2.1\wwwroot -DestinationPath package\BlazingWaffles.zip
+    Compress-Archive -Path C:\projects\blazingwaffles\src\BlazingWaffles\bin\Release\netstandard2.1\wwwroot\ -DestinationPath package\BlazingWaffles.zip
     
 test: off
 artifacts:
   - path: package\BlazingWaffles.zip
+deploy:  
+  - provider: Environment
+    name: BlazingWaffles
+    on:
+      branch: master  
+  
