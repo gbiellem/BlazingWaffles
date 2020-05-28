@@ -11,7 +11,7 @@ build_script:
       
     mkdir package
     
-    Compress-Archive -Path src\publish\wwwroot\ -DestinationPath package\BlazingWaffles.zip
+    Compress-Archive -Path (Join-Path (Pwd) -CHILD '\publish\wwwroot\') -DestinationPath package\BlazingWaffles.zip
     
 test: off
 artifacts:
