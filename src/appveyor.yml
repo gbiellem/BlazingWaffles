@@ -6,7 +6,9 @@ install:
 build_script:
 - ps: >-
     dotnet build src --configuration Release
-
     dotnet test src --configuration Release --no-build --no-restore --filter Category!=Integration
+    dotnet publish  src --configuration Release
+    mkdir package
+    Compress-Archive -Path .\src\BlazingWaffles\bin\Release\netstandard2.1\publish\BlazingWaffles\dist\ -DestinationPath package\BlazingWaffles.zip
 test: off
 artifacts:
