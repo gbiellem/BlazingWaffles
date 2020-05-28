@@ -12,4 +12,4 @@ build_script:
     Compress-Archive -Path .\src\BlazingWaffles\bin\Release\netstandard2.1\publish\BlazingWaffles\dist\ -DestinationPath package\BlazingWaffles.zip
 test: off
 artifacts:
-  -path: package\BlazingWaffles.zip
+  - path: package\BlazingWaffles.zip
