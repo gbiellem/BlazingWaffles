@@ -8,12 +8,10 @@ build_script:
     dotnet build src --configuration Release
     
     dotnet test src --configuration Release --no-build --no-restore --filter Category!=Integration
-    
-    dotnet publish src/BlazingWaffles --configuration Release --no-build --no-restore
-    
+      
     mkdir package
     
-    Compress-Archive -Path .\src\BlazingWaffles\bin\Release\netstandard2.1\publish\BlazingWaffles\dist\ -DestinationPath package\BlazingWaffles.zip
+    Compress-Archive -Path C:\projects\blazingwaffles\src\BlazingWaffles\bin\Release\netstandard2.1\wwwroot -DestinationPath package\BlazingWaffles.zip
     
 test: off
 artifacts:
