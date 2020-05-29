@@ -11,7 +11,7 @@ build_script:
     
     dotnet publish src\BlazingWaffles --configuration Release --no-build --no-restore --output .\publish
     
-    # del .\publish\wwwroot\_framework\_bin\PropertyChanged.*
+    del .\publish\wwwroot\_framework\_bin\PropertyChanged.*
     
     mkdir package
     
