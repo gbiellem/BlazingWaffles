@@ -7,8 +7,7 @@ using WaffleGenerator;
 namespace BlazingWaffles
 {
     [AddINotifyPropertyChangedInterface]
-    public partial class IndexModel :
-        ComponentBase
+    public  class IndexModel : ComponentBase
     {
         public IndexModel()
         {
