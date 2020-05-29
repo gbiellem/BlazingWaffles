@@ -5,19 +5,14 @@
     <h5 class="card-header">What is this?</h5>
     <div class="card-body">
         <p>
-            A Blazor app that wraps the <a href="https://www.nuget.org/packages/WaffleGenerator">Waffle Generator</a> nuget package.
-            The generator outputs readable gibberish that can be used in place of Lorum Ipsum.
+            A Blazor app that uses the <a href="https://github.com/SimonCropp/WaffleGenerator">Waffle Generator</a> project to generate readable gibberish that can be used in place of Lorum Ipsum.
+            Source: <a href="https://github.com/gbiellem/BlazingWaffles">https://github.com/gbiellem/BlazingWaffles</a> (<a href="https://github.com/gbiellem/BlazingWaffles/commit/@Sha">Built from commit</a>)
         </p>
-        <ul>
-            <li>This app source: <a href="https://github.com/gbiellem/BlazingWaffles">https://github.com/gbiellem/BlazingWaffles</a></li>
-            <li>Built from <a href="https://github.com/gbiellem/BlazingWaffles/commit/@Sha">@Sha</a></li>
-            <li>Waffle Generator project: <a href="https://github.com/SimonCropp/WaffleGenerator">https://github.com/SimonCropp/WaffleGenerator</a></li>
-        </ul>
     </div>
 </div>
 
 <div class="container.card">
-    <h5 class="card-header">Generator Options</h5>
+    <h5 class="card-header">Options</h5>
     <div class="card-body">
         <div class="container.align-items-baseline" style="width: 250px;">
             <div class="form-group form-check">
@@ -28,8 +23,8 @@
                 <label for="paragraphs">Generate @Paragraphs Paragraph(s)</label>
                 <input class="form-control-range" @bind="Paragraphs" type="range" min=1 max=10 step=1 id="paragraphs" onclick="Generate" />
             </div>
-            <div class="form-group">
-                <label for="outputType">OutputType</label>
+            <div class="form-inline">
+                <label for="outputType">OutputType:&nbsp;</label>
                 <select @bind="OutputType" class="form-control" id="outputType">
                     <option>Text</option>
                     <option>Html</option>
@@ -41,7 +36,7 @@
 
 <div class="card">
     <h5 class="card-header">
-        Generator Output
+        Output
         <button disabled="@IsWaffleEmpty" type="button" class="btn btn-primary btn-sm" @onclick="CopyTextToClipboard">Copy</button>
     </h5>
     <div class="card-body border-dark">
