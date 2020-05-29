@@ -13,9 +13,11 @@ namespace BlazingWaffles
         public IndexModel()
         {
             Sha = ShaLoader.Load();
+            SetWaffle();
         }
 
         [Inject] public IClipboard Clipboard { get; set; }
+
         public string Waffle { get; set; }
 
         public bool IsWaffleEmpty => Waffle == null;
