@@ -20,8 +20,6 @@ namespace BlazingWaffles
 
         public string Waffle { get; set; }
 
-        public bool IsWaffleEmpty => Waffle == null;
-
         void SetWaffle()
         {
             if (OutputType == OutputType.Text)

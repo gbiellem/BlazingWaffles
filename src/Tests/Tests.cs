@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BlazingWaffles.Pages;
 using Bunit.Mocking.JSInterop;
 using TextCopy;
