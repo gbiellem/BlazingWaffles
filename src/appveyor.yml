@@ -18,9 +18,8 @@ build_script:
 test: off
 artifacts:
   - path: package\BlazingWaffles.zip
-deploy:  
+deploy:
   - provider: Environment
     name: BlazingWaffles
     on:
-      branch: master  
-  
+      branch: master
