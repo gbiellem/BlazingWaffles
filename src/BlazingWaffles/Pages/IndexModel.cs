@@ -27,6 +27,11 @@ namespace BlazingWaffles
                 Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
                 return;
             }
+            if (OutputType == OutputType.Markdown)
+            {
+                Waffle = WaffleEngine.Markdown(Paragraphs, IncludeHeading);
+                return;
+            }
 
             Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
         }

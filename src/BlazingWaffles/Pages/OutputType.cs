@@ -1,5 +1,6 @@
 ﻿public enum OutputType
 {
     Text,
-    Html
+    Html,
+    Markdown
 }
