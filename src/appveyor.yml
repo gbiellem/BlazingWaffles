@@ -10,9 +10,7 @@ build_script:
     dotnet test src --configuration Release --no-build --no-restore --filter Category!=Integration
     
     dotnet publish src\BlazingWaffles --configuration Release --no-build --no-restore --output .\publish
-    
-    del .\publish\wwwroot\_framework\_bin\PropertyChanged.*
-    
+           
     mkdir package
     
     Compress-Archive -Path publish\wwwroot\*  -DestinationPath package\BlazingWaffles.zip
