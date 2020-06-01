@@ -6,6 +6,8 @@ using VerifyBunit;
 using Xunit;
 using Xunit.Abstractions;
 
+#region Tests
+
 public class Tests :
     VerifyBase
 {
@@ -27,3 +29,4 @@ public class Tests :
     {
     }
 }
+#endregion

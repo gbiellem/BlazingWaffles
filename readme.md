@@ -7,8 +7,42 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/auc0ev6wgxs7dexo/branch/master?svg=true)](https://ci.appveyor.com/project/gbiellem/blazingwaffles/branch/master)
 
+
 # BlazingWaffles
 
 Blazor wrapper around the [Waffle Generator](https://github.com/SimonCropp/WaffleGenerator)
 
 Site is live at http://wafflegen.azurewebsites.net
+
+
+## Tests
+
+Uses [bunit](https://bunit.egilhansen.com/) and [Verify](https://github.com/VerifyTests/Verify) to perform snapshot testing.
+
+<!-- snippet: Tests -->
+<a id='snippet-tests'/></a>
+```cs
+public class Tests :
+    VerifyBase
+{
+    [Fact]
+    public Task Component()
+    {
+        Services.AddMockJsRuntime();
+        Services.InjectMockClipboard();
+        var component = RenderComponent<Index>();
+        var instance = component.Instance;
+        instance.Waffle = "The Waffle";
+        instance.Sha = "TheSha";
+        component.Render();
+        return Verify(component);
+    }
+
+    public Tests(ITestOutputHelper output) :
+        base(output)
+    {
+    }
+}
+```
+<sup><a href='/src/Tests/Tests.cs#L9-L32' title='File snippet `tests` was extracted from'>snippet source</a> | <a href='#snippet-tests' title='Navigate to start of snippet `tests`'>anchor</a></sup>
+<!-- endsnippet -->
