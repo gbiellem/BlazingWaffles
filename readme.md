@@ -10,9 +10,19 @@ To change this file edit the source file and then run MarkdownSnippets.
 
 # BlazingWaffles
 
-Blazor wrapper around the [Waffle Generator](https://github.com/SimonCropp/WaffleGenerator)
+Blazor wrapper around the [Waffle Generator](https://github.com/SimonCropp/WaffleGenerator).
 
 Site is live at http://wafflegen.azurewebsites.net
+
+
+## Data Binding
+
+Uses [Fody PropertyChanged](https://github.com/Fody/PropertyChanged) to implement INotifyPropertyChanged.
+
+
+## Clipboard
+
+Uses [TextCopy](https://github.com/CopyText/TextCopy) add content to the clipboard.
 
 
 ## Tests
