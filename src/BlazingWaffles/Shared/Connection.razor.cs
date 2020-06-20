@@ -6,7 +6,7 @@ namespace BlazingWaffles
 {
     public class ConnectionBase : ComponentBase, IDisposable
     {
-        [Inject] 
+        [Inject]
         public IJSRuntime JsRuntime { get; set; }
 
         [Parameter]

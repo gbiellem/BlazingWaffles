@@ -4,5 +4,6 @@
     Waffle: 'The Waffle',
     Sha: 'TheSha',
     Paragraphs: 1
-  }
+  },
+  Bytes: '1,799'
 }

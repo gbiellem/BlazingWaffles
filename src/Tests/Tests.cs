@@ -1,32 +1,32 @@
 ﻿using System.Threading.Tasks;
 using BlazingWaffles.Pages;
-using Bunit.Mocking.JSInterop;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.JSInterop;
 using TextCopy;
-using VerifyBunit;
+using VerifyTests.Blazor;
+using VerifyXunit;
 using Xunit;
-using Xunit.Abstractions;
 
 #region Tests
 
-public class Tests :
-    VerifyBase
+[UsesVerify]
+public class Tests
 {
     [Fact]
     public Task Component()
     {
-        Services.AddMockJsRuntime();
-        Services.InjectMockClipboard();
-        var component = RenderComponent<Index>();
-        var instance = component.Instance;
-        instance.Waffle = "The Waffle";
-        instance.Sha = "TheSha";
-        component.Render();
-        return Verify(component);
-    }
-
-    public Tests(ITestOutputHelper output) :
-        base(output)
-    {
+        var services = new ServiceCollection();
+        services.AddSingleton<IJSRuntime>(new MockJSRuntime());
+        services.InjectMockClipboard();
+        var provider = services.BuildServiceProvider();
+        var target = Render.Component<Index>(provider,
+            beforeRender: component =>
+            {
+                component.Waffle = "The Waffle";
+                component.Sha = "TheSha";
+            });
+        return Verifier.Verify(target);
     }
 }
+
 #endregion

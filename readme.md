@@ -32,27 +32,25 @@ Uses [bunit](https://bunit.egilhansen.com/) and [Verify](https://github.com/Veri
 <!-- snippet: Tests -->
 <a id='snippet-tests'/></a>
 ```cs
-public class Tests :
-    VerifyBase
+[UsesVerify]
+public class Tests
 {
     [Fact]
     public Task Component()
     {
-        Services.AddMockJsRuntime();
-        Services.InjectMockClipboard();
-        var component = RenderComponent<Index>();
-        var instance = component.Instance;
-        instance.Waffle = "The Waffle";
-        instance.Sha = "TheSha";
-        component.Render();
-        return Verify(component);
-    }
-
-    public Tests(ITestOutputHelper output) :
-        base(output)
-    {
+        var services = new ServiceCollection();
+        services.AddSingleton<IJSRuntime>(new MockJSRuntime());
+        services.InjectMockClipboard();
+        var provider = services.BuildServiceProvider();
+        var target = Render.Component<Index>(provider,
+            beforeRender: component =>
+            {
+                component.Waffle = "The Waffle";
+                component.Sha = "TheSha";
+            });
+        return Verifier.Verify(target);
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L9-L32' title='File snippet `tests` was extracted from'>snippet source</a> | <a href='#snippet-tests' title='Navigate to start of snippet `tests`'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L10-L32' title='File snippet `tests` was extracted from'>snippet source</a> | <a href='#snippet-tests' title='Navigate to start of snippet `tests`'>anchor</a></sup>
 <!-- endsnippet -->
