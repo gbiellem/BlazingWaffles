@@ -19,7 +19,7 @@ public class Program
             {
                 BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
             });
-        
+
         return builder.Build().RunAsync();
     }
 }
