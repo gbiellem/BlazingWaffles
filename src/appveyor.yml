@@ -2,7 +2,7 @@ image: Visual Studio 2019
 skip_commits:
   message: /doco|Merge pull request.*/
 install:
-  - ps: choco install dotnetcore-sdk --no-progress --confirm --version 3.1.300
+  - ps: choco install dotnetcore-sdk --no-progress --confirm --version 3.1.302
 build_script:
 - ps: >-
     dotnet build src --configuration Release
