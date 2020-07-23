@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using BlazingWaffles.Pages;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
 using TextCopy;
 using VerifyTests.Blazor;
 using VerifyXunit;
 using Xunit;
+using Index = BlazingWaffles.Pages.Index;
 
 #region Tests
 

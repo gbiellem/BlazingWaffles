@@ -7,7 +7,7 @@ using WaffleGenerator;
 namespace BlazingWaffles
 {
     [AddINotifyPropertyChangedInterface]
-    public  class IndexModel : ComponentBase
+    public class IndexModel : ComponentBase
     {
         public IndexModel()
         {
@@ -26,6 +26,7 @@ namespace BlazingWaffles
                 Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
                 return;
             }
+
             if (OutputType == OutputType.Markdown)
             {
                 Waffle = WaffleEngine.Markdown(Paragraphs, IncludeHeading);
