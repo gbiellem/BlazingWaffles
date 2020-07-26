@@ -4,7 +4,17 @@ skip_commits:
 install:
   - choco install googlechrome
   - choco install dotnetcore-sdk --no-progress --confirm --version 3.1.302
-  - dotnet dev-certs https --trust
+  - ps: |
+      $certfile = Join-Path -Path (Resolve-Path ".").Path -ChildPath "cert.pfx"
+      $certPwd = "somepassword"
+      Remove-Item $certfile -ErrorAction SilentlyContinue
+      dotnet dev-certs https --clean
+      dotnet dev-certs https  --export-path=$certfile --password=$certPwd --verbose
+      $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($certfile, $certPwd, "PersistKeySet")
+      $rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine");
+      $rootStore.Open("ReadWrite")
+      $rootStore.Add($cert)
+      $rootStore.Close()
 build_script:
 - ps: >-
     dotnet build src --configuration Release
