@@ -15,10 +15,6 @@ public class SeleniumFixture :
 
     public SeleniumFixture()
     {
-        // remove some noise from the html snapshot
-        VerifierSettings.ScrubLinesContaining("<!--!-->");
-
-        VerifySelenium.Enable();
 
         StartBlazorApp();
 

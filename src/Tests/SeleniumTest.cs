@@ -24,6 +24,7 @@ public class SeleniumTest :
             "var ele=arguments[0]; ele.innerHTML = 'my new content';", element);
         var settings = new VerifySettings();
         settings.ScrubLinesContaining("Built from commit");
+        settings.AutoVerify();
         await Verifier.Verify(driver, settings);
     }
 }
