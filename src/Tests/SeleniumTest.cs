@@ -21,6 +21,8 @@ public class SeleniumTest :
         var element = driver.FindElement(By.Id("waffle"));
         ((IJavaScriptExecutor) driver).ExecuteScript(
             "var ele=arguments[0]; ele.innerHTML = 'my new content';", element);
-        await Verifier.Verify(driver);
+        var settings = new VerifySettings();
+        settings.ScrubLinesContaining("Built from commit");
+        await Verifier.Verify(driver, settings);
     }
 }
