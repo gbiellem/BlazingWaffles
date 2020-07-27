@@ -51,7 +51,7 @@ public class SeleniumFixture :
 
     void WaitForRender()
     {
-        var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+        var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
         wait.Until(drv => drv.FindElement(By.ClassName("main")));
     }
 
