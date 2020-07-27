@@ -27,9 +27,7 @@ build_script:
 
     Compress-Archive -Path publish\wwwroot\* -DestinationPath package\BlazingWaffles.zip
 
-on_failure:
-  - ps: Get-ChildItem *.received.* -recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
-on_success:
+on_finish:
   - ps: Get-ChildItem *.received.* -recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 test: off
 artifacts:
