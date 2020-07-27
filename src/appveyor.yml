@@ -9,7 +9,7 @@ install:
       $certPwd = "somepassword"
       Remove-Item $certfile -ErrorAction SilentlyContinue
       dotnet dev-certs https --clean
-      dotnet dev-certs https  --export-path=$certfile --password=$certPwd --verbose
+      dotnet dev-certs https --export-path=$certfile --password=$certPwd --verbose
       $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($certfile, $certPwd, "PersistKeySet")
       $rootStore = New-Object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine");
       $rootStore.Open("ReadWrite")
