@@ -5,7 +5,6 @@ using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using VerifyTests;
 
 public class SeleniumFixture :
     IDisposable
@@ -15,7 +14,6 @@ public class SeleniumFixture :
 
     public SeleniumFixture()
     {
-
         StartBlazorApp();
 
         StartDriver();
