@@ -53,4 +53,4 @@ public class Tests
 }
 ```
 <sup><a href='/src/Tests/Tests.cs#L10-L32' title='File snippet `tests` was extracted from'>snippet source</a> | <a href='#snippet-tests' title='Navigate to start of snippet `tests`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
