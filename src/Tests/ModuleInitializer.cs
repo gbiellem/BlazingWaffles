@@ -1,7 +1,9 @@
-﻿using VerifyTests;
+﻿using System.Runtime.CompilerServices;
+using VerifyTests;
 
 public static class ModuleInitializer
 {
+    [ModuleInitializer]
     public static void Initialize()
     {
         // remove some noise from the html snapshot
