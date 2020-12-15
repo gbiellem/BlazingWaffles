@@ -2,7 +2,7 @@ image: Visual Studio 2019
 skip_commits:
   message: /docs|Merge pull request.*/
 install:
-  - choco install googlechrome
+  - choco install googlechrome --ignorechecksum
   - ps: |
       $certfile = Join-Path -Path (Resolve-Path ".").Path -ChildPath "cert.pfx"
       $certPwd = "somepassword"
