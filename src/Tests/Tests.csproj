@@ -13,7 +13,8 @@
     <PackageReference Include="Verify.Blazor" Version="6.1.0" />
     <PackageReference Include="Verify.Xunit" Version="6.23.3" />
     <PackageReference Include="Xunit" Version="2.4.1" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="85.0.4183.8700" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="87.0.4280.8800" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <ProjectReference Include="..\BlazingWaffles\BlazingWaffles.csproj" />
   </ItemGroup>
