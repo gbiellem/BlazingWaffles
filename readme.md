@@ -23,7 +23,7 @@ Uses [TextCopy](https://github.com/CopyText/TextCopy) add content to the clipboa
 Uses [bunit](https://bunit.egilhansen.com/) and [Verify](https://github.com/VerifyTests/Verify) to perform snapshot testing.
 
 <!-- snippet: Tests -->
-<a id='04d13fd0'></a>
+<a id='snippet-tests'></a>
 ```cs
 [UsesVerify]
 public class Tests
@@ -45,5 +45,5 @@ public class Tests
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L10-L32' title='Snippet source file'>snippet source</a> | <a href='#04d13fd0' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L10-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

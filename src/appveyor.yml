@@ -3,7 +3,6 @@ skip_commits:
   message: /docs|Merge pull request.*/
 install:
   - choco install googlechrome
-  - choco install dotnetcore-sdk --no-progress --confirm --version 3.1.302
   - ps: |
       $certfile = Join-Path -Path (Resolve-Path ".").Path -ChildPath "cert.pfx"
       $certPwd = "somepassword"
