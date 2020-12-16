@@ -1,9 +1,9 @@
 {
   Instance: {
     Clipboard: {},
-    Waffle: 'The Waffle',
-    Sha: 'TheSha',
+    Waffle: The Waffle,
+    Sha: TheSha,
     Paragraphs: 1
   },
-  Bytes: '1,588'
+  Bytes: 1,588
 }

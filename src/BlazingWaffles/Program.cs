@@ -15,7 +15,7 @@ public class Program
         builder.RootComponents.Add<App>("app");
 
         builder.Services.AddTransient(
-            provider => new HttpClient
+            _ => new HttpClient
             {
                 BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
             });
