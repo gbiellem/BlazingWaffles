@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿#if DEBUG
+using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using VerifyTests;
@@ -28,3 +29,4 @@ public class SeleniumTest :
         await Verifier.Verify(driver, settings);
     }
 }
+#endif
