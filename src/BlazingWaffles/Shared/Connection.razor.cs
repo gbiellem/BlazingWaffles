@@ -7,13 +7,13 @@ namespace BlazingWaffles
     public class ConnectionBase : ComponentBase, IDisposable
     {
         [Inject]
-        public IJSRuntime JsRuntime { get; set; }
+        public IJSRuntime JsRuntime { get; set; } = null!;
 
         [Parameter]
-        public RenderFragment Online { get; set; }
+        public RenderFragment Online { get; set; } = null!;
 
         [Parameter]
-        public RenderFragment Offline { get; set; }
+        public RenderFragment Offline { get; set; } = null!;
 
         public bool IsOnline { get; set; }
 

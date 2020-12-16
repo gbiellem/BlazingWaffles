@@ -15,9 +15,10 @@ namespace BlazingWaffles
             SetWaffle();
         }
 
-        [Inject] public IClipboard Clipboard { get; set; }
+        [Inject]
+        public IClipboard Clipboard { get; set; } = null!;
 
-        public string Waffle { get; set; }
+        public string Waffle { get; set; } = null!;
 
         void SetWaffle()
         {
