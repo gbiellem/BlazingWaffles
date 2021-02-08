@@ -26,7 +26,7 @@ public class SeleniumFixture :
         var baseDirectory = AppDomain.CurrentDomain.BaseDirectory!;
         var binPath = baseDirectory.Replace("Tests", "BlazingWaffles");
         var projectDir = Path.GetFullPath(Path.Combine(binPath, "../../"));
-        var startInfo = new ProcessStartInfo("dotnet", "run")
+        ProcessStartInfo startInfo = new("dotnet", "run")
         {
             WorkingDirectory = projectDir
         };
@@ -35,17 +35,17 @@ public class SeleniumFixture :
 
     void StartDriver()
     {
-        var options = new ChromeOptions();
+        ChromeOptions options = new();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--headless");
-        driver = new ChromeDriver(options);
-        driver.Manage().Window.Size = new Size(1024, 768);
+        driver = new(options);
+        driver.Manage().Window.Size = new(1024, 768);
         driver.Navigate().GoToUrl("https://localhost:5001");
     }
 
     void WaitForRender()
     {
-        var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
+        WebDriverWait wait = new(Driver, TimeSpan.FromSeconds(30));
         wait.Until(drv => drv.FindElement(By.ClassName("main")));
     }
 
