@@ -34,8 +34,9 @@ public class Tests
         var services = new ServiceCollection();
         services.AddSingleton<IJSRuntime>(new MockJSRuntime());
         services.InjectMockClipboard();
-        var provider = services.BuildServiceProvider();
-        var target = Render.Component<Index>(provider,
+        using var provider = services.BuildServiceProvider();
+        Render target = Render.Component<Index>(
+            provider,
             beforeRender: component =>
             {
                 component.Waffle = "The Waffle";
@@ -45,5 +46,5 @@ public class Tests
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L10-L32' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L10-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->

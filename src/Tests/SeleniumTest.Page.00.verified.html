@@ -15,7 +15,12 @@
   <link rel="alternate icon" href="/favicon.ico">
   <body>
     <app>
+      <!--!-->
+      <!--!-->
+      <!--!-->
+      <!--!-->
       <div class="main">
+        <!--!-->
         <nav class="navbar navbar-light bg-light">
           <a class="navbar-brand" href="#">
             <img src="favicon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -23,43 +28,64 @@
           </a>
         </nav>
         <div class="content px-4">
+          <!--!-->
           <div class="container.container-fluid ">
+            <!--!-->
+            <!--!-->
             <h5 class="card-header">What is this?</h5>
             <div class="card-body">
+              <!--!-->                 A Blazor app that uses the 
+              <!--!-->
               <a href="https://github.com/SimonCropp/WaffleGenerator">Waffle Generator</a>
               project to generate readable gibberish that can be used in place of Lorum Ipsum.<br>
               Source: 
+              <!--!-->
               <a href="https://github.com/gbiellem/BlazingWaffles">github/gbiellem/BlazingWaffles</a>
+              <!--!-->)
             </div>
           </div>
+          <!--!-->
           <div class="container.card">
+            <!--!-->
             <h5 class="card-header">Options</h5>
             <div class="card-body">
               <div class="container.align-items-baseline" style="width: 250px;">
                 <div class="form-group form-check">
                   <input class="form-check-input" type="checkbox" id="headerschk">
+                  <!--!-->                 
+                  <!--!-->
                   <label class="form-check-label" for="headerschk">Heading</label>
                 </div>
+                <!--!-->
                 <div class="form-group">
                   <label for="paragraphs">Generate 1 Paragraph(s)</label>
+                  <!--!-->
                   <input class="form-control-range" type="range" min="1" max="10" step="1" id="paragraphs" onclick="Generate">
                 </div>
+                <!--!-->
                 <div class="form-inline">
+                  <!--!-->
                   <label for="outputType">OutputType:</label>
                   <select class="form-control" id="outputType">
                     <option>Text</option>
+                    <!--!-->
                     <option>Html</option>
+                    <!--!-->
                     <option>Markdown</option>
                   </select>
                 </div>
               </div>
             </div>
           </div>
+          <!--!-->
           <div class="card">
             <h5 class="card-header">
+              <!--!-->         Output
               <button type="button" class="btn btn-primary btn-sm">Copy</button>
             </h5>
+            <!--!-->
             <div class="card-body border-dark">
+              <code id="waffle" style="color: darkred;white-space: pre-line">my new content</code>
             </div>
           </div>
         </div>

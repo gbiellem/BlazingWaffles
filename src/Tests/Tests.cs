@@ -18,8 +18,9 @@ public class Tests
         var services = new ServiceCollection();
         services.AddSingleton<IJSRuntime>(new MockJSRuntime());
         services.InjectMockClipboard();
-        var provider = services.BuildServiceProvider();
-        var target = Render.Component<Index>(provider,
+        using var provider = services.BuildServiceProvider();
+        Render target = Render.Component<Index>(
+            provider,
             beforeRender: component =>
             {
                 component.Waffle = "The Waffle";
