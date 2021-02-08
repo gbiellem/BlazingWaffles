@@ -31,7 +31,7 @@ public class Tests
     [Fact]
     public Task Component()
     {
-        var services = new ServiceCollection();
+        ServiceCollection services = new();
         services.AddSingleton<IJSRuntime>(new MockJSRuntime());
         services.InjectMockClipboard();
         using var provider = services.BuildServiceProvider();

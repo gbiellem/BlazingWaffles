@@ -17,7 +17,7 @@ public class Program
         builder.Services.AddTransient(
             _ => new HttpClient
             {
-                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+                BaseAddress = new(builder.HostEnvironment.BaseAddress)
             });
 
         return builder.Build().RunAsync();
