@@ -1,13 +1,14 @@
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using PropertyChanged;
 using TextCopy;
 using WaffleGenerator;
 
 namespace BlazingWaffles
 {
-    [AddINotifyPropertyChangedInterface]
-    public class IndexModel : ComponentBase
+    public class IndexModel :
+        ComponentBase,
+        INotifyPropertyChanged
     {
         public IndexModel()
         {
@@ -62,6 +63,13 @@ namespace BlazingWaffles
         public Task CopyTextToClipboard()
         {
             return Clipboard.SetTextAsync(Waffle);
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public void OnPropertyChanged(string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
