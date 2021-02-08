@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using VerifyTests;
 using VerifyXunit;
 using Xunit;
 
@@ -23,10 +22,9 @@ public class SeleniumTest :
         var element = driver.FindElement(By.Id("waffle"));
         ((IJavaScriptExecutor) driver).ExecuteScript(
             "var ele=arguments[0]; ele.innerHTML = 'my new content';", element);
-        var settings = new VerifySettings();
-        settings.ScrubLinesContaining("Built from commit");
-        settings.AutoVerify();
-        await Verifier.Verify(driver, settings);
+        await Verifier.Verify(driver)
+            .AutoVerify()
+            .ScrubLinesContaining("Built from commit");
     }
 }
 #endif
