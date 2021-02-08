@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using BlazingWaffles;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
