@@ -1,23 +1,26 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using Xunit;
 
 public class SeleniumFixture :
-    IDisposable
+    IAsyncLifetime
 {
     Process? process;
     ChromeDriver? driver;
 
-    public SeleniumFixture()
+    public Task InitializeAsync()
     {
         StartBlazorApp();
 
         StartDriver();
 
         WaitForRender();
+        return Task.CompletedTask;
     }
 
     void StartBlazorApp()
@@ -50,7 +53,7 @@ public class SeleniumFixture :
 
     public ChromeDriver Driver => driver!;
 
-    public void Dispose()
+    public Task DisposeAsync()
     {
         if (driver != null)
         {
@@ -63,5 +66,7 @@ public class SeleniumFixture :
             process.Kill();
             process.Dispose();
         }
+
+        return Task.CompletedTask;
     }
 }
