@@ -5,10 +5,6 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using TextCopy;
 
-public class Program
-{
-    public static Task Main()
-    {
         var builder = WebAssemblyHostBuilder.CreateDefault();
         builder.Services.InjectClipboard();
         builder.RootComponents.Add<App>("app");
@@ -19,6 +15,4 @@ public class Program
                 BaseAddress = new(builder.HostEnvironment.BaseAddress)
             });
 
-        return builder.Build().RunAsync();
-    }
-}
+        await builder.Build().RunAsync();
