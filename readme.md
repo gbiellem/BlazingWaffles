@@ -35,7 +35,7 @@ public class Tests
         services.AddSingleton<IJSRuntime>(new MockJSRuntime());
         services.InjectMockClipboard();
         using var provider = services.BuildServiceProvider();
-        Render target = Render.Component<Index>(
+        var target = Render.Component<Index>(
             provider,
             beforeRender: component =>
             {

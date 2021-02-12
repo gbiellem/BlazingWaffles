@@ -27,7 +27,7 @@ public class PlaywrightFixture :
         var baseDirectory = AppDomain.CurrentDomain.BaseDirectory!;
         var binPath = baseDirectory.Replace("Tests", "BlazingWaffles");
         var projectDir = Path.GetFullPath(Path.Combine(binPath, "../../"));
-        ProcessStartInfo startInfo = new("dotnet", "run")
+        ProcessStartInfo startInfo = new("dotnet", "run --no-build --no-restore")
         {
             WorkingDirectory = projectDir
         };

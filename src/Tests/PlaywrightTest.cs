@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using PlaywrightSharp;
 using PlaywrightSharp.Chromium;
 using VerifyXunit;
-using Verify.AngleSharp;
 using Xunit;
 
 [UsesVerify]
@@ -24,9 +24,11 @@ public class PlaywrightTest :
         page.ViewportSize.Width = 1024;
         await page.GoToAsync("https://localhost:5001");
         await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
+        await page.EvaluateAsync(@"() => {
+    let dom = document.querySelector('#waffle');
+    dom.innerHTML = 'TheWaffle'
+ }");
         await Verifier.Verify(page)
-            .AutoVerify()
-            .ScrubLinesContaining("Built from commit")
-            .PrettyPrintHtml();
+            .ScrubLinesContaining("Built from commit");
     }
 }
