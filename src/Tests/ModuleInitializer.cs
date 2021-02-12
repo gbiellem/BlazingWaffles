@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using ImageMagick;
 using VerifyTests;
 
 public static class ModuleInitializer
@@ -11,6 +12,7 @@ public static class ModuleInitializer
         VerifierSettings.ScrubLinesWithReplace(s => s.Replace("<!--!-->", ""));
 
         VerifyPlaywright.Enable();
-        VerifyPhash.RegisterComparer("png", .99f);
+        VerifyImageMagick.Initialize();
+        VerifyImageMagick.RegisterComparers(.01, ErrorMetric.Fuzz);
     }
 }

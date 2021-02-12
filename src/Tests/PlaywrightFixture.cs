@@ -51,5 +51,11 @@ public class PlaywrightFixture :
         {
             playwright.Dispose();
         }
+
+        if (process != null)
+        {
+            process.Kill();
+            process.Dispose();
+        }
     }
 }
