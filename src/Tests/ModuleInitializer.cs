@@ -10,7 +10,7 @@ public static class ModuleInitializer
         VerifierSettings.ScrubEmptyLines();
         VerifierSettings.ScrubLinesWithReplace(s => s.Replace("<!--!-->", ""));
 
-        VerifySelenium.Enable();
+        VerifyPlaywright.Enable();
         VerifyPhash.RegisterComparer("png", .99f);
     }
 }
