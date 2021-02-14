@@ -24,7 +24,9 @@ public class PlaywrightTest :
         page.ViewportSize.Width = 1024;
         await page.GoToAsync("https://localhost:5001");
         await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
-        await page.EvaluateAsync(@"() => {
+        await page.EvaluateAsync(@"
+() =>
+ {
     let dom = document.querySelector('#waffle');
     dom.innerHTML = 'TheWaffle'
  }");
