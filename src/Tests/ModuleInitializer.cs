@@ -9,19 +9,12 @@ public static class ModuleInitializer
     public static void Initialize()
     {
         // remove some noise from the html snapshot
+        #region scrubbing
         VerifierSettings.ScrubEmptyLines();
         VerifierSettings.ScrubLinesWithReplace(s => s.Replace("<!--!-->", ""));
         HtmlPrettyPrint.All();
-        VerifierSettings.ScrubLinesWithReplace(s =>
-        {
-            var indexOf = s.IndexOf("sha256-");
-            if (indexOf == -1)
-            {
-                return s;
-            }
-
-            return s.Substring(0, indexOf) + s.Substring(indexOf + 51);
-        });
+        VerifierSettings.ScrubLinesContaining("<script src=\"_framework/dotnet.");
+        #endregion
         VerifyPlaywright.Enable();
         VerifyImageMagick.Initialize();
         VerifyImageMagick.RegisterComparers(.01, ErrorMetric.Fuzz);
