@@ -25,10 +25,10 @@ public class PlaywrightTest :
         await page.WaitForLoadStateAsync(LifecycleEvent.Networkidle);
         await page.EvaluateAsync(@"
 () =>
- {
+{
     let dom = document.querySelector('#waffle');
     dom.innerHTML = 'TheWaffle'
- }");
+}");
         await Verifier.Verify(page)
             .ScrubLinesContaining("Built from commit");
     }
