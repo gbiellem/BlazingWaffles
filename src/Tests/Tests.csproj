@@ -7,16 +7,16 @@
     <PackageReference Include="AngleSharp" Version="1.0.0-alpha-844" />
     <PackageReference Include="AngleSharp.Diffing" Version="0.14.0" />
     <PackageReference Include="Verify.AngleSharp" Version="2.6.0" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.0" PrivateAssets="all" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="23.1.1" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
     <PackageReference Include="Verify.ImageMagick" Version="2.7.0" />
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.23.2.1" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.23.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Verify.Blazor" Version="6.7.0" />
     <PackageReference Include="Verify.Playwright" Version="0.11.0" />
     <PackageReference Include="PlaywrightSharp" Version="0.192.0" />
-    <PackageReference Include="Verify.Xunit" Version="11.0.2" />
+    <PackageReference Include="Verify.Xunit" Version="11.0.3" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <ProjectReference Include="..\BlazingWaffles\BlazingWaffles.csproj" />
