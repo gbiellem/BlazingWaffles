@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="paragraphs">Generate @Paragraphs Paragraph(s)</label>
-                <input class="form-control-range" @bind="Paragraphs" type="range" min=1 max=10 step=1 id="paragraphs" onclick="Generate" />
+                <input class="form-control-range" @bind="Paragraphs" type="range" min=1 max=10 step=1 id="paragraphs" />
             </div>
             <div class="form-inline">
                 <label for="outputType">OutputType:&nbsp;</label>
@@ -48,6 +48,7 @@
     <h5 class="card-header">
         Output
         <button type="button" class="btn btn-primary btn-sm" @onclick="CopyTextToClipboard">Copy</button>
+        <button type="button" class="btn btn-primary btn-sm" @onclick="SetWaffle">Regen</button>
     </h5>
     <div class="card-body border-dark">
         <code id="waffle" style="color: darkred;white-space: pre-line">@Waffle</code>

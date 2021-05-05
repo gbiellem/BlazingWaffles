@@ -21,7 +21,7 @@ namespace BlazingWaffles
 
         public string Waffle { get; set; } = null!;
 
-        void SetWaffle()
+        public void SetWaffle()
         {
             if (OutputType == OutputType.Text)
             {
