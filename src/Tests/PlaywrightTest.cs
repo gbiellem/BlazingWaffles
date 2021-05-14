@@ -30,6 +30,6 @@ public class PlaywrightTest :
     dom.innerHTML = 'TheWaffle'
 }");
         await Verifier.Verify(page)
-            .ScrubLinesContaining("Built from commit");
+            .ScrubLinesContaining(">Commit<");
     }
 }

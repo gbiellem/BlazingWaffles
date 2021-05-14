@@ -4,15 +4,18 @@
     <TargetFramework>net5.0</TargetFramework>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
-    <!--<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>-->
+    <!--
+	https://github.com/dotnet/aspnetcore/issues/29939
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	-->
     <InvariantGlobalization>true</InvariantGlobalization>
     <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.5.1" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.5" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.6" PrivateAssets="all" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.3" PrivateAssets="all" />
     <PackageReference Include="TextCopy" Version="4.3.0" />
     <PackageReference Include="WaffleGenerator" Version="4.2.1" />
