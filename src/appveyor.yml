@@ -1,11 +1,9 @@
-image: Visual Studio 2019 Preview
+image: Visual Studio 2019
 skip_commits:
   message: /docs|Merge pull request.*/
 install:
   - choco install googlechrome --ignorechecksum
   - ps: |
-      Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile "./dotnet-install.ps1"
-      ./dotnet-install.ps1 -JSonFile src/global.json -Architecture x64 -InstallDir 'C:\Program Files\dotnet'
       $certfile = Join-Path -Path (Resolve-Path ".").Path -ChildPath "cert.pfx"
       $certPwd = "somepassword"
       Remove-Item $certfile -ErrorAction SilentlyContinue
