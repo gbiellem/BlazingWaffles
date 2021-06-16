@@ -2,8 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
-using PlaywrightSharp;
-using PlaywrightSharp.Chromium;
+using Microsoft.Playwright;
 using Xunit;
 
 public class PlaywrightFixture :
@@ -11,9 +10,9 @@ public class PlaywrightFixture :
 {
     Process? process;
     IPlaywright? playwright;
-    IChromiumBrowser? browser;
+    IBrowser? browser;
 
-    public IChromiumBrowser Browser { get => browser!; }
+    public IBrowser Browser { get => browser!; }
 
     public Task InitializeAsync()
     {
