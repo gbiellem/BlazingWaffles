@@ -14,7 +14,6 @@ install:
       $rootStore.Open("ReadWrite")
       $rootStore.Add($cert)
       $rootStore.Close()
-      dotnet dev-certs https --trust
 build_script:
 - ps: >-
     dotnet build src --configuration Release
