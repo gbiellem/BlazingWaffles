@@ -41,14 +41,14 @@ public class PlaywrightFixture :
 
     public async Task DisposeAsync()
     {
-        if (browser != null)
+        if (browser is not null)
         {
             await browser.DisposeAsync();
         }
 
         playwright?.Dispose();
 
-        if (process != null)
+        if (process is not null)
         {
             process.Kill();
             process.Dispose();
