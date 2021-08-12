@@ -37,10 +37,10 @@ public class Tests
         using var provider = services.BuildServiceProvider();
         var target = Render.Component<Index>(
             provider,
-            beforeRender: component =>
+            template: new()
             {
-                component.Waffle = "The Waffle";
-                component.Sha = "TheSha";
+                Waffle = "The Waffle",
+                Sha = "TheSha"
             });
         return Verifier.Verify(target);
     }
