@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Components;
 using TextCopy;
 using WaffleGenerator;
 
-namespace BlazingWaffles
+namespace BlazingWaffles.Pages
 {
-    public class IndexModel :
+    public partial class Index:
         ComponentBase,
         INotifyPropertyChanged
     {
-        public IndexModel()
+        public Index()
         {
             Sha = ShaLoader.Load();
             SetWaffle();
