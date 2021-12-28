@@ -26,7 +26,7 @@ public class Tests
                 Waffle = "The Waffle",
                 Sha = "TheSha"
             });
-        return Verifier.Verify(target);
+        return Verify(target);
     }
 }
 

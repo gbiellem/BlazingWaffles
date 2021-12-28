@@ -29,7 +29,7 @@ public class PlaywrightTest :
     let dom = document.querySelector('#waffle');
     dom.innerHTML = 'TheWaffle'
 }");
-        await Verifier.Verify(page)
+        await Verify(page)
             .ScrubLinesContaining(">Commit<");
     }
 }
