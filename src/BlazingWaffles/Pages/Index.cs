@@ -19,7 +19,7 @@ namespace BlazingWaffles.Pages
         [Inject]
         public IClipboard Clipboard { get; set; } = null!;
 
-        [Parameter] 
+        [Parameter]
         public string Waffle { get; set; } = null!;
 
         public void SetWaffle()
@@ -38,7 +38,7 @@ namespace BlazingWaffles.Pages
 
             Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
         }
-        
+
         [Parameter]
         public string Sha { get; set; }
 
@@ -49,7 +49,7 @@ namespace BlazingWaffles.Pages
         {
             SetWaffle();
         }
-        
+
         [Parameter]
         public bool IncludeHeading { get; set; }
 
@@ -57,7 +57,7 @@ namespace BlazingWaffles.Pages
         {
             SetWaffle();
         }
-        
+
         [Parameter]
         public OutputType OutputType { get; set; }
 

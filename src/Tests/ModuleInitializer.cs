@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using ImageMagick;
-using Verify.AngleSharp;
 using VerifyTests;
+using VerifyTests.AngleSharp;
 
 public static class ModuleInitializer
 {
