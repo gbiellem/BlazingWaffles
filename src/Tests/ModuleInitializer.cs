@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
 using ImageMagick;
-using VerifyTests;
 using VerifyTests.AngleSharp;
 
 public static class ModuleInitializer

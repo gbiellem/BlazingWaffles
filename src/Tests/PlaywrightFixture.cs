@@ -1,9 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.Playwright;
-using Xunit;
 
 public class PlaywrightFixture :
     IAsyncLifetime

@@ -1,10 +1,7 @@
-﻿using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.JSInterop;
 using TextCopy;
 using VerifyTests.Blazor;
-using VerifyXunit;
-using Xunit;
 using Index = BlazingWaffles.Pages.Index;
 
 #region Tests
@@ -26,7 +23,7 @@ public class Tests
                 Waffle = "The Waffle",
                 Sha = "TheSha"
             });
-        return Verifier.Verify(target);
+        return Verify(target);
     }
 }
 
