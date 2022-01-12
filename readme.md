@@ -42,9 +42,9 @@ public class Tests
                 Waffle = "The Waffle",
                 Sha = "TheSha"
             });
-        return Verifier.Verify(target);
+        return Verify(target);
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L10-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L7-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
