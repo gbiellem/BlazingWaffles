@@ -2,42 +2,41 @@ using System;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
-namespace BlazingWaffles
+namespace BlazingWaffles;
+
+public class ConnectionBase : ComponentBase, IDisposable
 {
-    public class ConnectionBase : ComponentBase, IDisposable
+    [Inject]
+    public IJSRuntime JsRuntime { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment Online { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment Offline { get; set; } = null!;
+
+    public bool IsOnline { get; set; }
+
+    [JSInvokable("Connection.StatusChanged")]
+    public void OnConnectionStatusChanged(bool isOnline)
     {
-        [Inject]
-        public IJSRuntime JsRuntime { get; set; } = null!;
-
-        [Parameter]
-        public RenderFragment Online { get; set; } = null!;
-
-        [Parameter]
-        public RenderFragment Offline { get; set; } = null!;
-
-        public bool IsOnline { get; set; }
-
-        [JSInvokable("Connection.StatusChanged")]
-        public void OnConnectionStatusChanged(bool isOnline)
+        if (IsOnline != isOnline)
         {
-            if (IsOnline != isOnline)
-            {
-                IsOnline = isOnline;
-            }
-
-            StateHasChanged();
+            IsOnline = isOnline;
         }
 
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
+        StateHasChanged();
+    }
 
-            JsRuntime.InvokeVoidAsync("Connection.Initialize", DotNetObjectReference.Create(this));
-        }
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
 
-        public void Dispose()
-        {
-            JsRuntime.InvokeVoidAsync("Connection.Dispose");
-        }
+        JsRuntime.InvokeVoidAsync("Connection.Initialize", DotNetObjectReference.Create(this));
+    }
+
+    public void Dispose()
+    {
+        JsRuntime.InvokeVoidAsync("Connection.Dispose");
     }
 }

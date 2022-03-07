@@ -1,5 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
-using ImageMagick;
 using VerifyTests.AngleSharp;
 
 public static class ModuleInitializer
@@ -16,6 +15,6 @@ public static class ModuleInitializer
         #endregion
         VerifyPlaywright.Enable();
         VerifyImageMagick.Initialize();
-        VerifyImageMagick.RegisterComparers(.01, ErrorMetric.Fuzz);
+        VerifyImageMagick.RegisterComparers(.01);
     }
 }

@@ -3,78 +3,77 @@ using Microsoft.AspNetCore.Components;
 using TextCopy;
 using WaffleGenerator;
 
-namespace BlazingWaffles.Pages
+namespace BlazingWaffles.Pages;
+
+public partial class Index:
+    ComponentBase,
+    INotifyPropertyChanged
 {
-    public partial class Index:
-        ComponentBase,
-        INotifyPropertyChanged
+    public Index()
     {
-        public Index()
+        Sha = ShaLoader.Load();
+        SetWaffle();
+    }
+
+    [Inject]
+    public IClipboard Clipboard { get; set; } = null!;
+
+    [Parameter]
+    public string Waffle { get; set; } = null!;
+
+    public void SetWaffle()
+    {
+        if (OutputType == OutputType.Text)
         {
-            Sha = ShaLoader.Load();
-            SetWaffle();
+            Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
+            return;
         }
 
-        [Inject]
-        public IClipboard Clipboard { get; set; } = null!;
-
-        [Parameter]
-        public string Waffle { get; set; } = null!;
-
-        public void SetWaffle()
+        if (OutputType == OutputType.Markdown)
         {
-            if (OutputType == OutputType.Text)
-            {
-                Waffle = WaffleEngine.Text(Paragraphs, IncludeHeading);
-                return;
-            }
-
-            if (OutputType == OutputType.Markdown)
-            {
-                Waffle = WaffleEngine.Markdown(Paragraphs, IncludeHeading);
-                return;
-            }
-
-            Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
+            Waffle = WaffleEngine.Markdown(Paragraphs, IncludeHeading);
+            return;
         }
 
-        [Parameter]
-        public string Sha { get; set; }
+        Waffle = WaffleEngine.Html(Paragraphs, IncludeHeading, false);
+    }
 
-        [Parameter]
-        public int Paragraphs { get; set; } = 1;
+    [Parameter]
+    public string Sha { get; set; }
 
-        public void OnParagraphsChanged()
-        {
-            SetWaffle();
-        }
+    [Parameter]
+    public int Paragraphs { get; set; } = 1;
 
-        [Parameter]
-        public bool IncludeHeading { get; set; }
+    public void OnParagraphsChanged()
+    {
+        SetWaffle();
+    }
 
-        public void OnIncludeHeadingChanged()
-        {
-            SetWaffle();
-        }
+    [Parameter]
+    public bool IncludeHeading { get; set; }
 
-        [Parameter]
-        public OutputType OutputType { get; set; }
+    public void OnIncludeHeadingChanged()
+    {
+        SetWaffle();
+    }
 
-        public void OnOutputTypeChanged()
-        {
-            SetWaffle();
-        }
+    [Parameter]
+    public OutputType OutputType { get; set; }
 
-        public Task CopyTextToClipboard()
-        {
-            return Clipboard.SetTextAsync(Waffle);
-        }
+    public void OnOutputTypeChanged()
+    {
+        SetWaffle();
+    }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+    public Task CopyTextToClipboard()
+    {
+        return Clipboard.SetTextAsync(Waffle);
+    }
 
-        public void OnPropertyChanged(string? propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new(propertyName));
-        }
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    public void OnPropertyChanged(string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new(propertyName));
     }
 }
