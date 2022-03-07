@@ -19,7 +19,7 @@ public class PlaywrightTest :
         size.Height = 768;
         size.Width = 1024;
         await page.GotoAsync("https://localhost:5001");
-        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+        await page.WaitForSelectorAsync("#waffle");
         await page.EvaluateAsync(@"
 () =>
 {
