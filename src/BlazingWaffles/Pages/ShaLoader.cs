@@ -8,6 +8,6 @@ static class ShaLoader
             .GetCustomAttributes<AssemblyInformationalVersionAttribute>()
             .Single()
             .InformationalVersion;
-        return version.Substring(version.IndexOf('+') + 1);
+        return version[(version.IndexOf('+') + 1)..];
     }
 }

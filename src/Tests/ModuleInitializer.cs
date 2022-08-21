@@ -13,7 +13,7 @@ public static class ModuleInitializer
         HtmlPrettyPrint.All();
         VerifierSettings.ScrubLinesContaining("<script src=\"_framework/dotnet.");
         #endregion
-        VerifyPlaywright.Enable();
+        VerifyPlaywright.Enable(true);
         VerifyImageMagick.Initialize();
         VerifyImageMagick.RegisterComparers(.01);
     }
