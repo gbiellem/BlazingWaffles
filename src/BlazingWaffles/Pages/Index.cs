@@ -65,10 +65,7 @@ public partial class Index:
         SetWaffle();
     }
 
-    public Task CopyTextToClipboard()
-    {
-        return Clipboard.SetTextAsync(Waffle);
-    }
+    public Task CopyTextToClipboard() => Clipboard.SetTextAsync(Waffle);
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
