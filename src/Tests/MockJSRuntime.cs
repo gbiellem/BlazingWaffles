@@ -5,5 +5,5 @@ public class MockJSRuntime :
 {
     public ValueTask<TValue> InvokeAsync<TValue>(string identifier, object?[]? args) => default;
 
-    public ValueTask<TValue> InvokeAsync<TValue>(string identifier, CancellationToken cancellation, object?[]? args) => default;
+    public ValueTask<TValue> InvokeAsync<TValue>(string identifier, Cancellation cancellation, object?[]? args) => default;
 }
