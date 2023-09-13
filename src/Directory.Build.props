@@ -2,7 +2,7 @@
 <Project>
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <LangVersion>11</LangVersion>
+    <LangVersion>preview</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 </Project>
