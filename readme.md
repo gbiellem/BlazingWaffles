@@ -5,6 +5,8 @@
 
 Blazor wrapper around the [Waffle Generator](https://github.com/SimonCropp/WaffleGenerator).
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 Site is live at http://wafflegen.azurewebsites.net
 
 
