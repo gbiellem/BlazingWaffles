@@ -27,7 +27,6 @@ Uses [bunit](https://bunit.egilhansen.com/) and [Verify](https://github.com/Veri
 <!-- snippet: Tests -->
 <a id='snippet-tests'></a>
 ```cs
-[UsesVerify]
 public class Tests
 {
     [Fact]
@@ -48,5 +47,5 @@ public class Tests
     }
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L7-L30' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L7-L29' title='Snippet source file'>snippet source</a> | <a href='#snippet-tests' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
