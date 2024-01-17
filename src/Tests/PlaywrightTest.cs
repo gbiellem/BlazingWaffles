@@ -1,6 +1,5 @@
 ﻿using Microsoft.Playwright;
 
-[UsesVerify]
 public class PlaywrightTest :
     IClassFixture<PlaywrightFixture>
 {

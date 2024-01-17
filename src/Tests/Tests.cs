@@ -6,7 +6,6 @@ using Index = BlazingWaffles.Pages.Index;
 
 #region Tests
 
-[UsesVerify]
 public class Tests
 {
     [Fact]
