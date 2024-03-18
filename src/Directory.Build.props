@@ -5,5 +5,7 @@
     <LangVersion>preview</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <NuGetAuditLevel>low</NuGetAuditLevel>
   </PropertyGroup>
 </Project>
