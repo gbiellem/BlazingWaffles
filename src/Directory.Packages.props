@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="AngleSharp" Version="1.1.2" />
+    <PackageVersion Include="AngleSharp.Diffing" Version="0.18.2" />
+    <PackageVersion Include="Argon" Version="0.17.0" />
+    <PackageVersion Include="Fody" Version="6.8.0" />
+    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="13.6.0" />
+    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="27.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.3" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageVersion Include="Microsoft.Playwright" Version="1.42.0" />
+    <PackageVersion Include="PropertyChanged.Fody" Version="4.1.0" />
+    <PackageVersion Include="TextCopy" Version="6.2.1" />
+    <PackageVersion Include="Verify.AngleSharp" Version="4.3.1" />
+    <PackageVersion Include="Verify.Blazor" Version="11.0.0" />
+    <PackageVersion Include="Verify.ImageMagick" Version="3.3.0" />
+    <PackageVersion Include="Verify.Playwright" Version="2.3.0" />
+    <PackageVersion Include="Verify.Xunit" Version="24.1.0" />
+    <PackageVersion Include="WaffleGenerator" Version="4.2.1" />
+    <PackageVersion Include="Xunit" Version="2.8.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.0" />
+  </ItemGroup>
+</Project>
