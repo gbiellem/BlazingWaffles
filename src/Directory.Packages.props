@@ -23,6 +23,6 @@
     <PackageVersion Include="Verify.Xunit" Version="26.2.0" />
     <PackageVersion Include="WaffleGenerator" Version="4.2.1" />
     <PackageVersion Include="Xunit" Version="2.9.0" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0-pre.24" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0-pre.35" />
   </ItemGroup>
 </Project>
