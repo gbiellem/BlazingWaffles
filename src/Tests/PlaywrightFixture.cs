@@ -19,10 +19,10 @@ public class PlaywrightFixture :
 
     void StartBlazorApp()
     {
-        var baseDirectory = AppDomain.CurrentDomain.BaseDirectory!;
+        var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
         var binPath = baseDirectory.Replace("Tests", "BlazingWaffles");
         var projectDir = Path.GetFullPath(Path.Combine(binPath, "../../"));
-        ProcessStartInfo startInfo = new("dotnet", "run --no-build --no-restore")
+        var startInfo = new ProcessStartInfo("dotnet", "run --no-build --no-restore")
         {
             WorkingDirectory = projectDir
         };
