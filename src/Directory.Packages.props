@@ -20,10 +20,10 @@
     <PackageVersion Include="Verify.Blazor" Version="11.0.0" />
     <PackageVersion Include="Verify.ImageMagick" Version="3.6.0" />
     <PackageVersion Include="Verify.Playwright" Version="3.0.0" />
-    <PackageVersion Include="Verify.Xunit" Version="28.5.0" />
+    <PackageVersion Include="Verify.Xunit" Version="28.6.0" />
     <PackageVersion Include="WaffleGenerator" Version="4.2.2" />
     <PackageVersion Include="Xunit" Version="2.9.2" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0-pre.49" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.0" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
