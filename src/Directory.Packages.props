@@ -18,7 +18,7 @@
     <PackageVersion Include="TextCopy" Version="6.2.1" />
     <PackageVersion Include="Verify.AngleSharp" Version="4.7.0" />
     <PackageVersion Include="Verify.Blazor" Version="11.0.0" />
-    <PackageVersion Include="Verify.ImageMagick" Version="3.7.1" />
+    <PackageVersion Include="Verify.ImageMagick" Version="3.7.2" />
     <PackageVersion Include="Verify.Playwright" Version="3.1.0" />
     <PackageVersion Include="Verify.Xunit" Version="30.7.3" />
     <PackageVersion Include="WaffleGenerator" Version="4.2.2" />
