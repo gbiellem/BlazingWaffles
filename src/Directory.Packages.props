@@ -23,7 +23,7 @@
     <PackageVersion Include="Verify.Xunit" Version="30.19.1" />
     <PackageVersion Include="WaffleGenerator" Version="4.2.2" />
     <PackageVersion Include="Xunit" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <!-- explicit to avoid a cve -->
     <PackageVersion Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
