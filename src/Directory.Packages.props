@@ -4,27 +4,27 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="AngleSharp" Version="1.3.0" />
-    <PackageVersion Include="AngleSharp.Diffing" Version="1.0.0" />
-    <PackageVersion Include="Argon" Version="0.31.0" />
-    <PackageVersion Include="Fody" Version="6.9.2" />
-    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.8.0" />
-    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0-beta.2" />
+    <PackageVersion Include="AngleSharp" Version="1.4.0" />
+    <PackageVersion Include="AngleSharp.Diffing" Version="1.1.0" />
+    <PackageVersion Include="Argon" Version="0.33.0" />
+    <PackageVersion Include="Fody" Version="6.9.3" />
+    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.9.1" />
+    <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0-beta.8" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.0" />
     <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
-    <PackageVersion Include="Microsoft.Playwright" Version="1.54.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageVersion Include="Microsoft.Playwright" Version="1.56.0" />
     <PackageVersion Include="PropertyChanged.Fody" Version="4.1.0" />
     <PackageVersion Include="TextCopy" Version="6.2.1" />
     <PackageVersion Include="Verify.AngleSharp" Version="4.7.0" />
     <PackageVersion Include="Verify.Blazor" Version="11.0.0" />
-    <PackageVersion Include="Verify.ImageMagick" Version="3.7.2" />
+    <PackageVersion Include="Verify.ImageMagick" Version="3.8.0" />
     <PackageVersion Include="Verify.Playwright" Version="3.1.0" />
-    <PackageVersion Include="Verify.Xunit" Version="31.4.0" />
+    <PackageVersion Include="Verify.Xunit" Version="31.8.0" />
     <PackageVersion Include="WaffleGenerator" Version="4.2.2" />
     <PackageVersion Include="Xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <!-- explicit to avoid a cve -->
-    <PackageVersion Include="System.Text.Json" Version="8.0.5" />
+    <PackageVersion Include="System.Text.Json" Version="10.0.0" />
   </ItemGroup>
 </Project>
